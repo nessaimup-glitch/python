@@ -27,8 +27,8 @@ def update_produk():
         nama = input("Masukkan nama produk yang ingin diubah: ")
         
         if nama in produk:
-            produk_baru = input("Masukkan Produk baru: ")
-            produk[nama] = produk_baru
+            harga_baru = float(input("Masukkan harga baru: "))  
+            produk[nama] = harga_baru
             print("produk berhasil diubah.")
         else:
             print("produk tidak ditemukan.")
@@ -46,19 +46,19 @@ def hitung_total():
     nama = input("Masukkan nama produk: ")
     
     if nama not in produk:
-        print("Produk tidak ditemukan")
+        print("Belum ada produk untuk dihitung.")
         return
-    
-    jumlah = int(input("Masukkan Jumlah: "))
+
+    jumlah = int(input("Masukkan jumlah: "))
     
     harga = produk[nama]
-    total = harga * jumlah 
-    
-    print("\n ===TOTAL BELANJA===")
-    print(f"Produk : {nama}")
+    total = harga * jumlah
+     
+    print("\n===Total Belanja ===")
+    print(f"produk : {nama}")
     print(f"Harga : Rp{harga:,.0f}")
     print(f"Jumlah : {jumlah}")
-    print(f"Total : Rp{total:,.0f}")
+    print(f"Total : {total:,.0f}")
 
 def main():
     while True:
